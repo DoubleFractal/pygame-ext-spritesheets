@@ -9,7 +9,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="pygame-ext-spritesheets",
-    version="1.0",
+    version="1.1",
     description="Maintained version of pygame's spritesheet code. Remade for Python 3.",
     long_description=long_description, 
     author="Pygame Community",

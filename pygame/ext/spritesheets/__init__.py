@@ -1,4 +1,24 @@
+"""
 
+Copyright (C) 2022 Alexey "LEHAtupointow" Pavlov
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301
+    USA
+
+
+"""
 __version__ = "1.0"
 __author__ = "Pygame Community"
 
@@ -13,9 +33,10 @@ class SpriteSheet(object):
             print('Unable to load spritesheet image:', filename)
             raise SystemExit(traceback.format_exc())
     # Load a specific image from a specific rectangle
-    def image_at(self, rectangle, image_size,  colorkey = -1):
+    def image_at(self, rectangle,  colorkey = -1):
         "Loads image from x,y,x+offset,y+offset"
         rect = pygame.Rect(rectangle)
+        image_size = (rect.width,  rect.height)
         image = pygame.Surface(image_size).convert()
         image.blit(self.sheet, (0, 0), rect)
         if colorkey is not None:
